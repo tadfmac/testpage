@@ -1,5 +1,7 @@
 // from http://www.html5rocks.com/ja/tutorials/service-worker/introduction/
 
+// Update
+
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
   './',
@@ -37,3 +39,21 @@ self.addEventListener('fetch', function(event) {
       })
   );
 });
+
+self.addEventListener('activate', function(evt) {
+  evt.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        });
+      );
+    });
+  );
+});
+
+
+
+

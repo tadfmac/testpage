@@ -5,20 +5,28 @@
 <title>Service Workers Test</title>
 <style>
 *{
-	margin:0;
-	padding:0;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+.rec_img, #header{
+  padding:5 10;
 }
 </style>
 </head>
 <body>
-<p>Service Workers Test</p>
-<a href="http://www.html5rocks.com/ja/tutorials/service-worker/introduction/">ネタ元</a><br>
-<h2>歌川国芳画集</h2>
-<p>All images from <a href="https://ja.wikipedia.org/wiki/%E6%AD%8C%E5%B7%9D%E5%9B%BD%E8%8A%B3">wikipedia</a></p>
-<div class="rec_img"><img src="Cats_suggested_as_the_fifty-three_stations_of_the_Tokaido.jpg" width="100%"></div>
-<div class="rec_img"><img src="Mitsukuni_defying_the_skeleton_spectre_invoked_by_princess_Takiyasha.jpg" width="100%"></div>
-<div class="rec_img"><img src="Warrior_Minamoto_Raiko_and_the_Earth_Spider_LACMA_M.2006.136.292a-c_(1_of_2).jpg" width="100%"></div>
-<div class="rec_img"><img src="Kuniyoshi_Utagawa,_wrestling.jpg" width="100%"></div>
+<div id="header">
+  <p>Service Workers Test</p>
+  <a href="http://www.html5rocks.com/ja/tutorials/service-worker/introduction/">ネタ元</a><br>
+  <h2>歌川国芳画集</h2>
+  <p>All images from <a href="https://ja.wikipedia.org/wiki/%E6%AD%8C%E5%B7%9D%E5%9B%BD%E8%8A%B3">wikipedia</a></p>
+</div>
+<div id="images">
+  <div class="rec_img"><img src="Cats_suggested_as_the_fifty-three_stations_of_the_Tokaido.jpg" width="100%"></div>
+  <div class="rec_img"><img src="Mitsukuni_defying_the_skeleton_spectre_invoked_by_princess_Takiyasha.jpg" width="100%"></div>
+  <div class="rec_img"><img src="Warrior_Minamoto_Raiko_and_the_Earth_Spider_LACMA_M.2006.136.292a-c_(1_of_2).jpg" width="100%"></div>
+  <div class="rec_img"><img src="Kuniyoshi_Utagawa,_wrestling.jpg" width="100%"></div>
+</div>
 <script>
 // http://www.html5rocks.com/ja/tutorials/service-worker/introduction/
 if ('serviceWorker' in navigator) {
