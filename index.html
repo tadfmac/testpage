@@ -1,11 +1,35 @@
-<!DOCTYPE html>
 <html>
 <head>
-<meta charset='utf-8'>
-<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-<title>Testpage</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service Workers Test</title>
+<style>
+*{
+	margin:0;
+	padding:0;
+}
+</style>
 </head>
 <body>
-<div>test</div>
+<p>Service Workers Test</p>
+<a href="http://www.html5rocks.com/ja/tutorials/service-worker/introduction/">ネタ元</a><br>
+<h2>歌川国芳画集</h2>
+<p>All images from <a href="https://ja.wikipedia.org/wiki/%E6%AD%8C%E5%B7%9D%E5%9B%BD%E8%8A%B3">wikipedia</a></p>
+<div class="rec_img"><img src="Cats_suggested_as_the_fifty-three_stations_of_the_Tokaido.jpg" width="100%"></div>
+<div class="rec_img"><img src="Mitsukuni_defying_the_skeleton_spectre_invoked_by_princess_Takiyasha.jpg" width="100%"></div>
+<div class="rec_img"><img src="Warrior_Minamoto_Raiko_and_the_Earth_Spider_LACMA_M.2006.136.292a-c_(1_of_2).jpg" width="100%"></div>
+<div class="rec_img"><img src="Kuniyoshi_Utagawa,_wrestling.jpg" width="100%"></div>
+<script>
+// http://www.html5rocks.com/ja/tutorials/service-worker/introduction/
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js').then(function(registration) {
+    // 登録成功
+    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+  }).catch(function(err) {
+    // 登録失敗 :(
+    console.log('ServiceWorker registration failed: ', err);
+  });
+}
+</script>
 </body>
 </html>
