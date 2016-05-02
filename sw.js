@@ -48,7 +48,7 @@ self.addEventListener('activate', function(evt) {
           return caches.delete(cacheName);
         });
       );
-    });
+    }
   );
 });
 
